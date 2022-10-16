@@ -6,10 +6,29 @@
 body {
     margin: 0;
     color: white;
+    --font_standard: 16px;
+    --font_header: calc(4*var(--font_standard));
+    --font_size_two: calc(3*var(--font_standard));
+    --font_size_three: calc(1.5*var(--font_standard));
+    font-size: var(--font_standard);
 }
 
 h1 {
     font-family: "Bungee Shade";
+}
+
+header>h1 {
+    font-size: var(--font_header);
+    margin-bottom: 60px;
+    margin-top: 0;
+}
+
+article>h1 {
+    font-size: var(--font_size_two);
+}
+
+h2 {
+    font-size: var(--font_size_three);
 }
 
 body>div {
@@ -143,6 +162,8 @@ article {
 
 #X .anecdotes li:nth-of-type(1) {
     grid-column: 1;
+    display: flex;
+    align-items: center;
 
     padding: 40px 20px;
     border-radius: 20px 0 20px 20px;
@@ -176,6 +197,9 @@ article {
 
 #X .anecdotes li:nth-of-type(7) {
     grid-column: 5;
+    display: flex;
+    align-items: center;
+
     padding: 30px 20px;
     border-radius: 20px 20px 0 20px;
 }
@@ -243,6 +267,8 @@ img.show_not_hover {
 
 #divide .anecdotes li:nth-of-type(1) {
     grid-column: 1;
+    display: flex;
+    align-items: center;
 
     padding: 40px 20px;
     border-radius: 20px 20px 20px 0;
@@ -272,6 +298,8 @@ img.show_not_hover {
 
 #divide .anecdotes li:nth-of-type(6) {
     grid-column: 4;
+    display: flex;
+    align-items: center;
 
     padding: 30px 20px;
     border-radius: 20px 20px 0 20px;
