@@ -5,10 +5,10 @@
 
 body {
     margin: 0;
-    color: white;
-    --font_standard: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    --font_standard: 1.2vw;
     --font_header: calc(4*var(--font_standard));
-    --font_size_two: calc(3*var(--font_standard));
+    --font_size_two: calc(2*var(--font_standard));
     --font_size_three: calc(1.5*var(--font_standard));
     font-size: var(--font_standard);
 }
@@ -23,17 +23,18 @@ header>h1 {
     margin-top: 0;
 }
 
-article>h1 {
+article h1 {
     font-size: var(--font_size_two);
 }
 
-h2 {
+.album_data h2 {
     font-size: var(--font_size_three);
+    color: white;
 }
 
 body>div {
-    background-image: url(../sidan/images/Ed_Sheeran_desktop1.jpg);
-    min-height: 100%;
+    background-image: url(../sidan/images/Ed_Sheeran_desktop.jpg);
+    height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -58,10 +59,12 @@ nav {
 }
 
 nav>div {
+    font-family: helvetica;
+    color: black;
     background-color: rgba(255, 255, 255, 0.6);
     flex-grow: 1;
     text-align: center;
-    padding: 13px;
+    padding: 15px;
     border-radius: 10px;
 }
 
@@ -80,7 +83,7 @@ nav>div:nth-of-type(4):hover {
 }
 
 #X {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid white;
     border-radius: 30px;
     width: 80vw;
@@ -94,6 +97,7 @@ article {
     display: grid;
     grid-template-columns: repeat(6, auto);
     grid-template-rows: repeat(4, auto);
+    gap: 5px;
 }
 
 .album_data {
@@ -112,6 +116,10 @@ article {
     margin-bottom: 70px;
 }
 
+.album_description {
+    margin-bottom: 60px;
+}
+
 .song_list ul {
     list-style: normal;
     padding-left: 15px;
@@ -122,9 +130,8 @@ article {
     grid-row: 3;
     display: grid;
     gap: 5px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    margin-bottom: 5px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
 }
 
 .song_list>div:first-of-type {
@@ -138,7 +145,8 @@ article {
 #X .song_list div {
     background-color: #0eb74b;
     color: black;
-    padding-left: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
 }
 
 .anecdotes {
@@ -152,7 +160,7 @@ article {
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
 }
 
 #X .anecdotes li {
@@ -165,7 +173,7 @@ article {
     display: flex;
     align-items: center;
 
-    padding: 40px 20px;
+    padding: 20px;
     border-radius: 20px 0 20px 20px;
 }
 
@@ -174,7 +182,7 @@ article {
     display: flex;
     align-items: center;
 
-    padding: 20px;
+    padding: 0 20px;
     border-radius: 20px 20px 20px 0;
 }
 
@@ -208,10 +216,9 @@ article {
     grid-column: 6;
     grid-row: 1 / span 2;
     position: relative;
-    height: 300px;
+    height: 100%;
     overflow: hidden;
     border-radius: 20px 20px 0 0;
-    margin-bottom: 5px;
 }
 
 img {
@@ -236,7 +243,7 @@ img.show_not_hover {
 }
 
 #divide {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid white;
     border-radius: 30px;
     width: 80vw;
@@ -246,10 +253,18 @@ img.show_not_hover {
     margin-bottom: 70px;
 }
 
+/*#divide .album_data h1::before {
+    content: url(../sidan/media/number-1-icon.png);
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}*/
+
+
 #divide .song_list div {
     background-color: #48bada;
     color: black;
-    padding-left: 15px;
+    padding-left: 20px;
     padding-right: 10px;
 }
 
@@ -303,4 +318,230 @@ img.show_not_hover {
 
     padding: 30px 20px;
     border-radius: 20px 20px 0 20px;
+}
+
+@media (max-width: 800px) {
+    body {
+        --font_standard: 2.2vw;
+    }
+
+    body>div {
+        background-image: url(../sidan/images/Ed_Sheeran_tablet.jpg);
+    }
+
+    header {
+        text-align: center;
+    }
+
+    article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .album_data {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+
+    .cover {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .song_list {
+        grid-column: 3;
+        grid-row: 1;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .song_list>div {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .anecdotes {
+        grid-column: 1 /span 3;
+        grid-row: 3;
+    }
+
+    .song_list>div:first-of-type {
+        border-radius: 0 20px 0 0;
+    }
+
+    .song_list>div:last-of-type {
+        border-radius: 0 0 20px 0;
+    }
+
+    .album_description {
+        margin-bottom: 0;
+    }
+
+    .cover:hover img.show_not_hover {
+        opacity: 0;
+    }
+
+    .cover:hover img {
+        opacity: 1;
+    }
+
+    #X .anecdotes {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #X .anecdotes li:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(3) {
+        grid-column: 3/ span 2;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(6) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #X .anecdotes li:nth-of-type(7) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #divide .anecdotes li:nth-of-type(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(5) {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes li:nth-of-type(6) {
+        grid-column: 4;
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        --font_standard: 3vw;
+    }
+
+    body>div {
+        background-image: url(../sidan/images/Ed_Sheeran_phone.jpg);
+    }
+
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .album_data {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .cover {
+        grid-column: 1;
+        grid-row: 1;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .song_list {
+        grid-column: 1;
+        grid-row: 2;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .album_data {
+        margin: 0;
+    }
+
+    .anecdotes {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .song_list>div:first-of-type {
+        border-radius: 0 0 0 20px;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .song_list>div:last-of-type {
+        border-radius: 0 0 20px 0;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #X .anecdotes {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #X .anecdotes li:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(3) {
+        grid-column: 2/ span 2;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(6) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #X .anecdotes li:nth-of-type(7) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #divide .anecdotes li:nth-of-type(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(5) {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes li:nth-of-type(6) {
+        grid-column: 3;
+        grid-row: 2;
+    }
 }
