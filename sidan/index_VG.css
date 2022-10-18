@@ -6,7 +6,7 @@
 body {
     margin: 0;
     color: rgba(255, 255, 255, 0.8);
-    --font_standard: 1.5vw;
+    --font_standard: 1.2vw;
     --font_header: calc(4.5*var(--font_standard));
     --font_size_two: calc(2*var(--font_standard));
     --font_size_three: calc(1.5*var(--font_standard));
@@ -253,14 +253,6 @@ img.show_not_hover {
     position: relative;
 }
 
-/*#divide .album_data h1::before {
-    content: url(../sidan/media/number-1-icon1.png);
-
-    position: absolute;
-    top: -30px;
-    left: -30px;
-}*/
-
 #divide .album_data h1::before {
     background-image: url('../sidan/media/number-1-icon.png');
     background-size: 45px 45px;
@@ -335,7 +327,7 @@ img.show_not_hover {
 
 @media (max-width: 800px) {
     body {
-        --font_standard: 2.2vw;
+        --font_standard: 2vw;
     }
 
     body>div {
@@ -349,7 +341,7 @@ img.show_not_hover {
     article {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 50vh 1fr 1fr;
+        grid-template-rows: 50vw 1fr 1fr;
     }
 
     .album_data {
@@ -369,7 +361,7 @@ img.show_not_hover {
 
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 25vh 24vh;
+        grid-template-rows: 25vw 24vw;
     }
 
     .song_list>div:first-of-type {
@@ -476,14 +468,14 @@ img.show_not_hover {
     article {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 350px 20vh 1fr 1fr;
+        grid-template-rows: 70vw 20vw 1fr 1fr;
     }
 
     .album_data {
         grid-column: 1;
         grid-row: 3;
 
-        margin-top: 30px;
+        margin-top: 60px;
     }
 
     .cover {
@@ -566,5 +558,19 @@ img.show_not_hover {
     #divide .anecdotes li:nth-of-type(6) {
         grid-column: 3;
         grid-row: 2;
+    }
+
+
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+    body {
+        --font_standard: 11px;
+    }
+}
+
+@media (min-width: 1111px) {
+    body {
+        --font_standard: 13px;
     }
 }
