@@ -126,15 +126,17 @@ article {
     grid-row: 3;
     display: grid;
     gap: 5px;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
 }
 
 .song_list>div:first-of-type {
+    grid-column: 1;
     border-radius: 0 0 0 20px;
 }
 
 .song_list>div:last-of-type {
+    grid-column: 2;
     border-radius: 0 0 20px 0;
 }
 
@@ -361,7 +363,7 @@ img.show_not_hover {
 
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 25vw 24vw;
+        grid-template-rows: 24vw 25vw;
     }
 
     .song_list>div:first-of-type {
