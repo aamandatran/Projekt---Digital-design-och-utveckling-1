@@ -253,13 +253,25 @@ img.show_not_hover {
     position: relative;
 }
 
-#divide .album_data h1::before {
+/*#divide .album_data h1::before {
     content: url(../sidan/media/number-1-icon1.png);
-    display: inline-block;
 
     position: absolute;
     top: -30px;
     left: -30px;
+}*/
+
+#divide .album_data h1::before {
+    background-image: url('../sidan/media/number-1-icon.png');
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    content: "";
 }
 
 #divide .song_list div {
@@ -267,8 +279,6 @@ img.show_not_hover {
     color: black;
     padding-left: 20px;
     padding-right: 10px;
-
-    pos
 }
 
 #divide .anecdotes {
@@ -472,6 +482,8 @@ img.show_not_hover {
     .album_data {
         grid-column: 1;
         grid-row: 3;
+
+        margin-top: 30px;
     }
 
     .cover {
@@ -487,10 +499,6 @@ img.show_not_hover {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-    }
-
-    .album_data {
-        margin: 0;
     }
 
     .anecdotes {
