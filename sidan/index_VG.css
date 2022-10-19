@@ -6,11 +6,12 @@
 body {
     margin: 0;
     color: rgba(255, 255, 255, 0.8);
-    --font_standard: 1.2vw;
+    --font_standard: 1.8vw;
     --font_header: calc(4.5*var(--font_standard));
     --font_size_two: calc(2*var(--font_standard));
     --font_size_three: calc(1.5*var(--font_standard));
     font-size: var(--font_standard);
+    line-height: 1.3;
 }
 
 h1 {
@@ -567,12 +568,12 @@ img.show_not_hover {
 
 @media (min-width: 800px) and (max-width: 900px) {
     body {
-        --font_standard: 11px;
+        --font_standard: 16px;
     }
 }
 
 @media (min-width: 1111px) {
     body {
-        --font_standard: 13px;
+        --font_standard: 20px;
     }
 }
