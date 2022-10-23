@@ -3,6 +3,7 @@
     src: url(Bungee_Shade.zip);
 }
 
+/*BACKGROUND IMAGE AND CSS VARIABLES*/
 body {
     background-image: url(../sidan/images/Ed_Sheeran_desktop.jpg);
     height: 100%;
@@ -12,12 +13,14 @@ body {
     background-size: cover;
     color: white;
     font-size: 1.3vw;
+    --gap_space: 10px;
 }
 
 h1 {
     font-family: "Bungee Shade";
 }
 
+/*BLACK BACKGROUND*/
 div:nth-of-type(1) div:only-child {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 30px;
@@ -26,9 +29,10 @@ div:nth-of-type(1) div:only-child {
     margin: 80px auto 100px auto;
 }
 
+/*NAVIGATION*/
 nav {
     display: flex;
-    gap: 5px;
+    gap: var(--gap_space);
     padding: 40px 0;
 }
 
@@ -56,6 +60,7 @@ nav>div:nth-of-type(4):hover {
     font-weight: bold;
 }
 
+/*ALBUM DISPLAY*/
 article {
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid white;
@@ -70,7 +75,7 @@ article {
     display: grid;
     grid-template-columns: 2fr fit-content(30vw);
     grid-template-rows: fit-content(30vw 15vw 15vw);
-    gap: 5px;
+    gap: var(--gap_space);
 }
 
 .album_data {
@@ -86,6 +91,7 @@ article {
     position: relative;
 }
 
+/*ALBUM COVER*/
 img {
     width: 100%;
     height: 100%;
@@ -108,12 +114,13 @@ img.show_not_hover {
     opacity: 1;
 }
 
+/*SONG LIST*/
 .song_list {
     grid-column: 2;
     grid-row: 2;
 
     display: flex;
-    gap: 5px;
+    gap: var(--gap_space);
 }
 
 .song_list>div:first-of-type {
@@ -145,6 +152,7 @@ img.show_not_hover {
     color: black;
 }
 
+/*ANECDOTES*/
 .anecdotes {
     grid-column: 1 / span 2;
     grid-row: 3;
@@ -160,9 +168,10 @@ img.show_not_hover {
     display: none;
 }
 
+/*X ALBUM*/
 #X .anecdotes {
     display: grid;
-    gap: 5px;
+    gap: var(--gap_space);
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     grid-template-rows: fit-content(15vw);
 }
@@ -208,9 +217,11 @@ img.show_not_hover {
     border-radius: 20px 20px 0 20px;
 }
 
+
+/*DIVIDE ALBUM*/
 #divide .anecdotes {
     display: grid;
-    gap: 5px;
+    gap: var(--gap_space);
     grid-template-columns: 2fr 1fr 2fr 1fr;
     grid-template-rows: fit-content(15vw);
 }
@@ -254,4 +265,218 @@ img.show_not_hover {
     align-items: center;
 
     border-radius: 20px 20px 0 20px;
+}
+
+@media (max-width: 800px) {
+    body {
+        background-image: url(../sidan/images/Ed_Sheeran_tablet.jpg);
+    }
+
+    header {
+        text-align: center;
+    }
+
+    article {
+        display: grid;
+        grid-template-columns: 50vw 1fr;
+        grid-template-rows: 50vw 1fr 1fr;
+    }
+
+    .album_data {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin-top: 10px;
+    }
+
+    .cover {
+        grid-column: 1;
+        grid-row: 1;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .song_list {
+        grid-column: 2;
+        grid-row: 1;
+
+        flex-direction: column;
+    }
+
+    .song_list>div:first-of-type {
+        border-radius: 0 20px 0 0;
+    }
+
+    .song_list>div:last-of-type {
+        border-radius: 0 0 20px 0;
+    }
+
+    .cover:hover img.show_not_hover {
+        opacity: 0;
+    }
+
+    .cover:hover img {
+        opacity: 1;
+    }
+
+    .anecdotes {
+        grid-column: 1 /span 3;
+        grid-row: 3;
+    }
+
+    .anecdotes li {
+        padding: 40px 10px;
+    }
+
+    #X .anecdotes {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #X .anecdotes li:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(3) {
+        grid-column: 3/ span 2;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(6) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #X .anecdotes li:nth-of-type(7) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #divide .anecdotes li:nth-of-type(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(5) {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes li:nth-of-type(6) {
+        grid-column: 4;
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        background-image: url(../sidan/images/Ed_Sheeran_phone.jpg);
+        margin: 0;
+    }
+
+    div:nth-of-type(1) div:only-child {
+        margin: 0;
+        border-radius: 0;
+        width: auto;
+    }
+
+    article {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70vw 30vw 1fr 1fr;
+    }
+
+    .album_data {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .cover {
+        grid-column: 1;
+        grid-row: 1;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .song_list {
+        grid-column: 1;
+        grid-row: 2;
+
+        flex-direction: row;
+    }
+
+    .anecdotes {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .song_list>div:first-of-type {
+        border-radius: 0 0 0 20px;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .song_list>div:last-of-type {
+        border-radius: 0 0 20px 0;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #X .anecdotes {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #X .anecdotes li:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(3) {
+        grid-column: 2/ span 2;
+        grid-row: 1;
+    }
+
+    #X .anecdotes li:nth-of-type(6) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    #X .anecdotes li:nth-of-type(7) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #divide .anecdotes li:nth-of-type(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    #divide .anecdotes li:nth-of-type(5) {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    #divide .anecdotes li:nth-of-type(6) {
+        grid-column: 3;
+        grid-row: 2;
+    }
 }
