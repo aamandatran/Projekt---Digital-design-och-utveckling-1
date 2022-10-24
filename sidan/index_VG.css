@@ -5,7 +5,7 @@
 
 /*BACKGROUND IMAGE AND CSS VARIABLES*/
 body {
-    background-image: url(../sidan/images/Ed_Sheeran_desktop.jpg);
+    background-image: url(images/Ed_Sheeran_desktop.jpg);
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,14 +13,27 @@ body {
     background-size: cover;
     color: white;
 
-    font-size: 1.3vw;
-    --font_standard: ;
-    line-height: 1.3;
+    font-size: var(--font_standard);
+    --font_standard: 1.3vw;
+    --font_header: calc(4.5*var(--font_standard));
+    --font_size_two: calc(2*var(--font_standard));
+    --font_size_three: calc(1.5*var(--font_standard));
+    font-size: var(--font_standard);
+    line-height: 1.2;
     --gap_space: 8px;
 }
 
 h1 {
     font-family: "Bungee Shade";
+}
+
+header>h1 {
+    font-size: var(--font_header);
+    margin-top: 0;
+}
+
+article h1 {
+    font-size: var(--font_size_two);
 }
 
 /*BLACK BACKGROUND*/
@@ -76,18 +89,19 @@ article {
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: 2fr fit-content(30vw);
-    grid-template-rows: fit-content(30vw 15vw 10vw);
+    grid-template-columns: 1fr 35vw;
+    grid-template-rows: 35vw auto auto;
     gap: var(--gap_space);
 }
 
 .album_data {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1 / span 2;
 }
 
 .album_data h2 {
     margin-bottom: 40px;
+    font-size: var(--font_size_three);
 }
 
 .album_data ul {
@@ -98,13 +112,13 @@ article {
 .cover {
     grid-column: 2;
     grid-row: 1;
-    height: 1fr;
 
     position: relative;
 }
 
 /*ALBUM COVER*/
 img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 20px 20px 0 0;
@@ -147,6 +161,7 @@ img.show_not_hover {
     flex-basis: 0;
     flex-grow: 1;
     padding: 15px 20px;
+    max-height: 20vw;
 }
 
 .song_list ul {
@@ -173,7 +188,8 @@ img.show_not_hover {
 }
 
 .anecdotes li {
-    padding: 20px 30px;
+    padding: 40px 20px;
+    max-height: 30vw;
 }
 
 .empty {
@@ -185,7 +201,7 @@ img.show_not_hover {
     display: grid;
     gap: var(--gap_space);
     grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    grid-template-rows: fit-content(10vw);
+    grid-template-rows: 1fr;
 }
 
 #X .anecdotes li {
@@ -210,7 +226,7 @@ img.show_not_hover {
 }
 
 #X .anecdotes li:nth-of-type(6) {
-    background-image: url(../sidan/images/Ed_sheeran.jpg);
+    background-image: url(images/Ed_sheeran.jpg);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -235,7 +251,7 @@ img.show_not_hover {
 }
 
 #divide .album_data h1::before {
-    background-image: url(../sidan/media/number-1-icon.png);
+    background-image: url(media/number-1-icon.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -244,7 +260,7 @@ img.show_not_hover {
     content: "";
 
     position: absolute;
-    top: -40px;
+    top: -30px;
     left: -40px;
 }
 
@@ -257,7 +273,7 @@ img.show_not_hover {
     display: grid;
     gap: var(--gap_space);
     grid-template-columns: 2fr 1fr 2fr 1fr;
-    grid-template-rows: fit-content(15vw);
+    grid-template-rows: 1fr;
 }
 
 #divide .anecdotes li {
@@ -282,7 +298,7 @@ img.show_not_hover {
 }
 
 #divide .anecdotes li:nth-of-type(5) {
-    background-image: url(../sidan/images/Grammy.jpg);
+    background-image: url(images/Grammy.jpg);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -305,7 +321,8 @@ img.show_not_hover {
 
     /*BACKGROUND IMAGE CHANGE*/
     body {
-        background-image: url(../sidan/images/Ed_Sheeran_tablet.jpg);
+        background-image: url(images/Ed_Sheeran_tablet.jpg);
+        --font_standard: 2vw;
     }
 
     header {
@@ -316,18 +333,18 @@ img.show_not_hover {
     article {
         display: grid;
         grid-template-columns: 50vw 1fr;
-        grid-template-rows: 50vw 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr;
     }
 
     .album_data {
         grid-column: 1 / span 2;
         grid-row: 2;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     /*NUMBER 1 ICON*/
     #divide .album_data h1::before {
-        top: -40px;
+        top: -20px;
     }
 
     .cover {
@@ -343,6 +360,12 @@ img.show_not_hover {
 
         flex-direction: column;
     }
+
+    .song_list div {
+        padding: 0 10px;
+        max-height: 30vw;
+    }
+
 
     .song_list>div:first-of-type {
         border-radius: 0 20px 0 0;
@@ -428,8 +451,9 @@ img.show_not_hover {
 
     /*BACKGROUND IMAGE CHANGE*/
     body {
-        background-image: url(../sidan/images/Ed_Sheeran_phone.jpg);
+        background-image: url(images/Ed_Sheeran_phone.jpg);
         margin: 0;
+        --font_standard: 2.8vw;
     }
 
     /*BLACK BACKGROUND*/
@@ -442,15 +466,13 @@ img.show_not_hover {
     /*ALBUM DISPLAY*/
     article {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 70vw 30vw 1fr 1fr;
+        grid-template-columns: auto;
+        grid-template-rows: minmax(300px, auto) auto auto 1fr;
     }
 
     .album_data {
         grid-column: 1;
         grid-row: 3;
-
-        margin-bottom: 0;
     }
 
     .cover {
@@ -465,6 +487,10 @@ img.show_not_hover {
         grid-row: 2;
 
         flex-direction: row;
+    }
+
+    .song_list div {
+        max-height: 40vw;
     }
 
     .song_list>div:first-of-type {
@@ -482,6 +508,10 @@ img.show_not_hover {
     .anecdotes {
         grid-column: 1;
         grid-row: 4;
+    }
+
+    .anecdotes li {
+        padding: 50px 10px;
     }
 
     /*X ALBUM*/
@@ -534,5 +564,17 @@ img.show_not_hover {
     #divide .anecdotes li:nth-of-type(6) {
         grid-column: 3;
         grid-row: 2;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+    body {
+        --font_standard: 12px;
+    }
+}
+
+@media (min-width: 1111px) {
+    body {
+        --font_standard: 15px;
     }
 }
